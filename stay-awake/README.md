@@ -2,7 +2,7 @@
 1. Install Python
 2. `pip install pyautogui`
 3. Copy the `stay-awake.py` in your desktop
-4. `vi ~/.bash-aliases` (if you are using Windows, install `GitBash` first before executing this command)
+4. `vi ~/.bash_aliases` (if you are using Windows, install `GitBash` first before executing this command)
 5. Add this line at the end of the file: `alias sa='python <path to stay-awake.py>/stay-awake.py'`
 6. Save the file and quit
 7. `source ~/.bash_aliases`
