@@ -1,3 +1,10 @@
+# ######################################################################
+# Execution: python3 find_ebookhunter_start_page.py [optional - non-interactive mode: n] [optional - start page number: an int]
+#   Ex. 1: python3 find_ebookhunter_start_page.py
+#   Ex. 2: python3 find_ebookhunter_start_page.py n
+#   Ex. 3: python3 find_ebookhunter_start_page.py n 100
+# ######################################################################
+
 import sys
 import requests
 
@@ -9,6 +16,7 @@ BOOK_TITLES = [
 def main(argv: list):
     global BOOK_TITLES
     collect_book_title = False if len(argv) >= 2 and argv[1].lower() == "n" else True
+    start_page = int(argv[2]) if len(argv) >=3 else 1
 
     # Take book titles to look for
     while(collect_book_title):
@@ -25,7 +33,8 @@ def main(argv: list):
     print(BOOK_TITLES)
 
     # Start searching
-    current_page = 1
+    print("Starting search from page# "+str(start_page))
+    current_page = start_page
     while(True):
         current_page_url = EBOOK_HUNTER_BASE_URL + str(current_page)
         print("--------------------------------")
