@@ -3,6 +3,8 @@
 #   Ex. 1: python3 find_ebookhunter_start_page.py
 #   Ex. 2: python3 find_ebookhunter_start_page.py n
 #   Ex. 3: python3 find_ebookhunter_start_page.py n 100
+# KNOWN ISSUES:
+#   - Titles with single quote in them are not parsed properly. So, avoid having those kind of titles for searching
 # ######################################################################
 
 import sys
@@ -10,7 +12,7 @@ import requests
 
 EBOOK_HUNTER_BASE_URL = "https://ebook-hunter.org/Books/"
 BOOK_TITLES = [
-    "Embracing the Power of AI by Globant"
+    "Deal With Stress by Bloomsbury Publishing"
 ]
 
 def main(argv: list):
