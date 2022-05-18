@@ -40,22 +40,22 @@ def main(argv: list):
     while(True):
         current_page_url = EBOOK_HUNTER_BASE_URL + str(current_page)
         print("--------------------------------")
-        print("Looking for "+BOOK_TITLES[0]+" in "+current_page_url)
+        print("Looking for: "+BOOK_TITLES[0]+" in "+current_page_url)
 
         response = requests.get(current_page_url)
         if response.status_code == 200:
             if BOOK_TITLES[0] in response.text:
-                print("Found "+BOOK_TITLES[0]+" in "+current_page_url)
+                print("Found: "+BOOK_TITLES[0]+" in "+current_page_url)
                 print("Looking for the remaining titles in the same page")
                 match_found = 1
                 for i, title in enumerate(BOOK_TITLES):
                     if i > 0:
                         if title in response.text:
-                            print("Found "+title+" in "+current_page_url)
+                            print("Found: "+title+" in "+current_page_url)
                             match_found += 1
                         else:
-                            print("NOT Found "+title+" in "+current_page_url)
-                print("Found "+str(match_found)+"/"+str(len(BOOK_TITLES))+" matches")
+                            print("NOT Found: "+title+" in "+current_page_url)
+                print("Found: "+str(match_found)+"/"+str(len(BOOK_TITLES))+" matches")
                 print("You can start from here")
                 print("")
                 print(current_page_url)
