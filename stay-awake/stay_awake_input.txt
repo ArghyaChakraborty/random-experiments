@@ -1,0 +1,47 @@
+def main():
+    """ This is a simple function """
+
+    print("Hello World")
+
+def greet(name):
+    """
+    This function greets to
+    the person passed in as
+    a parameter
+    """
+
+    print("Hello, " + name + ". Good morning!")
+
+def absolute_value(num):
+    """This function returns the absolute
+    value of the entered number"""
+
+    if num >= 0:
+        return num
+    else:
+        return -num
+
+def changeme( mylist ):
+   "This changes a passed list into this function"
+
+   mylist.append([1,2,3,4])
+   print("Values inside the function: ", mylist)
+   return
+
+def add_numbers(*args: int):
+    """ This method add the list of numbers """
+
+    sum = 0
+    for n in args:
+        sum+= n
+    print("Total: ", sum)
+    return sum
+
+def string_reversal(input: str):
+    """ This method reverses a given string """
+    
+    output = ""
+    for c in input:
+        output = c + output
+    print("Original: "+input+" => Reversed: "+output)
+    return output
